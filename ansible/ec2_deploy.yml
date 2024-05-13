@@ -5,13 +5,14 @@
   tasks:
     - name: Launch EC2 Instance
       ec2_instance:
+        name: "Dolj14 eshop"
         instance_type: t3.medium
         image_id: ami-04e5276ebb8451442
         region: us-east-1
         key_name: TestKey
         vpc_subnet_id: subnet-095220e69ef3b0e9c
         tags:
-          name: Eshop 1
+          name: Dolj14Eshop
         count: 1
         network:
           assign_public_id: yes
@@ -57,7 +58,7 @@
 
     - name: Fetch eshop from git
       git:
-        repo: 'hhttps://github.com/HonzaDoly/4IT572_semestr-ln-Pr-ce.git'
+        repo: 'https://github.com/HonzaDoly/4IT572_semestr-ln-Pr-ce.git'
         dest: ./app
 
     - name: Build Eshop Docker image
